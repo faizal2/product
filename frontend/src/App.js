@@ -1,0 +1,25 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AddProduct from "./components/product/addProduct";
+import EditProduct from "./components/product/editProduct";
+import ListProduct from "./components/product/listProduct";
+import AddUser from "./components/user/addUser";
+import EditUser from "./components/user/editUser";
+import ListUser from "./components/user/listUser";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="user/" element={<ListUser />} />
+        <Route path="user/add" element={<AddUser />} />
+        <Route path="user/edit/:id" element={<EditUser />} />
+        <Route path="product/" element={<ListProduct />} />
+        <Route path="product/add" element={<AddProduct />} />
+        <Route path="product/edit/:id" element={<EditProduct />} />
+
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
