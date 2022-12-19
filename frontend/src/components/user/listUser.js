@@ -94,7 +94,7 @@ const ListUser = () => {
                                 </tbody>
                             </table>
                         </div>
-                        {rows == 0 ?
+                        {rows === 0 ?
                             <p className="text-center text-danger">-- Empty --</p>
                             :
                             <div className="row">

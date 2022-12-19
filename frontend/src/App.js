@@ -5,19 +5,22 @@ import ListProduct from "./components/product/listProduct";
 import AddUser from "./components/user/addUser";
 import EditUser from "./components/user/editUser";
 import ListUser from "./components/user/listUser";
+import MainLayout from "./components/layout/MainLayout";
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="user/" element={<ListUser />} />
-        <Route path="user/add" element={<AddUser />} />
-        <Route path="user/edit/:id" element={<EditUser />} />
-        <Route path="product/" element={<ListProduct />} />
-        <Route path="product/add" element={<AddProduct />} />
-        <Route path="product/edit/:id" element={<EditProduct />} />
-
-      </Routes>
+      <MainLayout>
+        <Routes>
+          <Route path="user/" element={<ListUser />} />
+          <Route path="user/add" element={<AddUser />} />
+          <Route path="user/edit/:id" element={<EditUser />} />
+          <Route path="product/" element={<ListProduct />} />
+          <Route path="product/add" element={<AddProduct />} />
+          <Route path="product/edit/:id" element={<EditProduct />} />
+          <Route path='*' element={<h1 className='text-danger'>404</h1>} />
+        </Routes>
+      </MainLayout>
     </BrowserRouter>
   );
 }

@@ -66,7 +66,7 @@ const EditProduct = () => {
                                 </div>
 
                                 {preview ? (
-                                    <img src={preview} className="img-thumbnail" alt="Preview Image" />
+                                    <img src={preview} className="img-thumbnail" alt="Gambar Product" />
                                 ) : (
                                     ""
                                 )}

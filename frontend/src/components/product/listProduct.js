@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+
 const ListProduct = () => {
     const [products, setProducts] = useState([]);
     const [modalTriggered, setModalTriggered] = useState(false);
@@ -44,12 +45,12 @@ const ListProduct = () => {
                             {products.map((product) => (
                                 <div className="col-md-4" key={product.id}>
                                     <div className="card mb-3" >
-                                        <img src={product.url} alt="Image" className="card-img-top" style={{ maxHeight: "250px" }} />
-                                        <div className="card-body">
+                                        <img src={product.url} alt="List Gambar" className="card-img-top pb-0" />
+                                        <div className="card-body pt-0">
                                             <h5 className="card-title">{product.name}</h5>
                                             <div className="btn-group" >
-                                                <Link className="btn btn-outline-primary" to={`/product/edit/${product.id}`}>Edit</Link>
-                                                <button type="button" onClick={() => confirmDeleteProduct(product.id)} className="btn btn-outline-danger">Delete</button>
+                                                <Link className="btn btn-outline-primary btn-sm" to={`/product/edit/${product.id}`}>Edit</Link>
+                                                <button type="button" onClick={() => confirmDeleteProduct(product.id)} className="btn btn-sm btn-outline-danger">Delete</button>
                                             </div>
                                         </div>
                                     </div>
