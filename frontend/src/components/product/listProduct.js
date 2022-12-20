@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { FaEdit, FaPlus, FaTrash } from 'react-icons/fa';
+
 
 
 const ListProduct = () => {
@@ -39,7 +41,7 @@ const ListProduct = () => {
                 <div className="row mt-5">
                     <div className="col">
                         <Link to={`add`} className="btn btn-outline-success">
-                            Add New
+                            Add <FaPlus />
                         </Link>
                         <div className="row mt-3">
                             {products.map((product) => (
@@ -48,10 +50,11 @@ const ListProduct = () => {
                                         <img src={product.url} alt="List Gambar" className="card-img-top pb-0" />
                                         <div className="card-body pt-0">
                                             <h5 className="card-title">{product.name}</h5>
-                                            <div className="btn-group" >
-                                                <Link className="btn btn-outline-primary btn-sm" to={`/product/edit/${product.id}`}>Edit</Link>
-                                                <button type="button" onClick={() => confirmDeleteProduct(product.id)} className="btn btn-sm btn-outline-danger">Delete</button>
-                                            </div>
+                                        </div>
+                                        <div className="card-footer text-end">
+                                            <Link to={`/product/edit/${product.id}`}><FaEdit title="edit" /></Link>
+                                            <Link className="mx-1 mr-0" type="button" onClick={() => confirmDeleteProduct(product.id)} ><FaTrash title="Delete" /></Link>
+
                                         </div>
                                     </div>
                                 </div>
@@ -64,15 +67,15 @@ const ListProduct = () => {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title">Modal title</h5>
+                            <h5 className="modal-title">Konfirmasi !</h5>
                             <button type="button" className="btn-close" onClick={() => handleModalTrigger()}></button>
                         </div>
                         <div className="modal-body">
-                            <p>Modal body text goes here.</p>
+                            <p>Anda yakin ingin meghapus data ?</p>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" onClick={() => handleModalTrigger()}>Close</button>
-                            <button type="button" className="btn btn-primary" onClick={() => deleteProduct()}>Yes, delete</button>
+                            <button type="button" className="btn btn-outline-secondary" onClick={() => handleModalTrigger()}>Tidak</button>
+                            <button type="button" className="btn btn-outline-danger" onClick={() => deleteProduct()}>Ya, Hapus <FaTrash /></button>
                         </div>
                     </div>
                 </div>

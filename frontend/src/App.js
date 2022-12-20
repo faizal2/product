@@ -6,6 +6,7 @@ import AddUser from "./components/user/addUser";
 import EditUser from "./components/user/editUser";
 import ListUser from "./components/user/listUser";
 import MainLayout from "./components/layout/MainLayout";
+import ListPegawai from "./components/pegawai/listPegawai";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="product/" element={<ListProduct />} />
           <Route path="product/add" element={<AddProduct />} />
           <Route path="product/edit/:id" element={<EditProduct />} />
+          <Route path="pegawai/" element={<ListPegawai />} />
           <Route path='*' element={<h1 className='text-danger'>404</h1>} />
         </Routes>
       </MainLayout>
